@@ -2,6 +2,64 @@
 
 A modern, intelligent e-commerce chat interface powered by AI. Built with microservices architecture and beautiful UI components for a complete shopping experience.
 
+## 📑 Table of Contents
+
+- [✨ Features](#-features)
+  - [🧠 Intelligent AI Shopping Assistant](#-intelligent-ai-shopping-assistant)
+  - [🛒 Complete E-commerce Experience](#-complete-e-commerce-experience)
+  - [🎨 Modern UI/UX](#-modern-uiux)
+- [🏗️ Architecture](#️-architecture)
+  - [Backend (Python)](#backend-python)
+  - [Frontend (React)](#frontend-react)
+- [📋 Prerequisites](#-prerequisites)
+  - [For Local Development](#for-local-development)
+  - [For GKE Deployment](#for-gke-deployment)
+- [🚀 Quick Start](#-quick-start)
+  - [1. Clone and Setup](#1-clone-and-setup)
+  - [2. 🛠️ Enhanced Local Development (Recommended)](#2-️-enhanced-local-development-recommended)
+  - [3. ⚙️ Manual Development Setup](#3-️-manual-development-setup)
+  - [4. 🔧 gRPC URL Management](#4--grpc-url-management)
+  - [5. Access the Application](#5-access-the-application)
+- [🎯 Usage Examples](#-usage-examples)
+  - [🔍 Intelligent Product Search](#-intelligent-product-search)
+  - [💰 Smart Price Filtering](#-smart-price-filtering)
+  - [🏷️ Promotional Intelligence](#️-promotional-intelligence)
+  - [🛒 Enhanced Shopping Cart](#-enhanced-shopping-cart)
+  - [🎁 Recommendation System](#-recommendation-system)
+  - [📋 Order Confirmation with Images](#-order-confirmation-with-images)
+- [🧠 AI Intelligence Capabilities](#-ai-intelligence-capabilities)
+  - [🔍 Smart Search Intelligence](#-smart-search-intelligence)
+  - [💰 Intelligent Price Filtering](#-intelligent-price-filtering)
+  - [🎯 Intelligent Recommendations](#-intelligent-recommendations)
+  - [🏷️ Smart Promotional Integration](#️-smart-promotional-integration)
+  - [🎨 Visual Intelligence](#-visual-intelligence)
+- [🏗️ Component Architecture](#️-component-architecture)
+  - [Key React Components](#key-react-components)
+  - [Smart Message Detection](#smart-message-detection)
+- [🔧 Configuration](#-configuration)
+  - [Environment Variables](#environment-variables)
+- [🌐 gRPC & Protocol Buffers](#-grpc--protocol-buffers)
+  - [📄 Key Files](#-key-files)
+  - [🏗️ Microservices Defined in Proto](#️-microservices-defined-in-proto)
+  - [🔄 How gRPC Works in This Project](#-how-grpc-works-in-this-project)
+  - [💡 Example gRPC Usage](#-example-grpc-usage)
+  - [🔧 Regenerating gRPC Files (if needed)](#-regenerating-grpc-files-if-needed)
+  - [🎯 Why gRPC?](#-why-grpc)
+  - [📚 Understanding Message Types](#-understanding-message-types)
+  - [Test Data](#test-data)
+- [🔄 Production Deployment to GKE](#-production-deployment-to-gke)
+  - [Prerequisites for GKE Deployment](#prerequisites-for-gke-deployment)
+  - [🚀 Enhanced One-Command Deployment (Recommended)](#-enhanced-one-command-deployment-recommended)
+  - [⚙️ Manual Deployment (Alternative)](#️-manual-deployment-alternative)
+  - [Accessing Your Deployed Application](#accessing-your-deployed-application)
+  - [Production Architecture](#production-architecture)
+- [🛠️ Development](#️-development)
+  - [File Structure](#file-structure)
+  - [🔧 Enhanced Development Scripts](#-enhanced-development-scripts)
+  - [API Endpoints](#api-endpoints)
+  - [Stopping Services](#stopping-services)
+  - [Development Workflow Best Practices](#development-workflow-best-practices)
+
 ## ✨ Features
 
 ### 🧠 Intelligent AI Shopping Assistant
@@ -613,33 +671,3 @@ export PROJECT_ID="your-project-id"
 ./toggle_grpc_urls.sh local   # Switch to local development
 ./toggle_grpc_urls.sh k8s     # Switch to production deployment
 ```
-
-## 🎨 Design Principles
-
-### ✅ What We Achieved
-- **LLM Intelligence First** - AI handles search, recommendations, and ad parsing
-- **No Hardcoding** - Pure AI intelligence instead of hardcoded rules
-- **API-driven Architecture** - All data comes from microservices
-- **Visual-First UX** - Product cards, images, and rich components over text
-- **Conversational Commerce** - Shopping stays within chat experience
-- **Microservices Integration** - Leverages all 9 boutique services intelligently
-- **Service-Powered Features** - Real recommendation engine and smart search
-- **Responsive Design** - Beautiful experience on mobile and desktop
-- **Progressive Enhancement** - Works with loading states and graceful errors
-
-### 🚫 What We Avoided
-- **Complex State Management** - Kept simple with useState and useEffect
-- **Hardcoded Business Logic** - AI makes intelligent decisions instead
-- **Verbose Text Output** - Visual components replace lengthy descriptions
-- **External Redirects** - Everything stays within the chat experience
-- **Static Recommendations** - Uses intelligent recommendation service
-- **Manual Ad Targeting** - AI determines contextual promotional content
-- **Cryptic Product IDs** - Rich product cards with images and names
-- **Over-engineered Abstractions** - Clean, purpose-built components
-
-### 🧠 AI-First Philosophy
-- **Intelligence Over Rules** - LLM understanding beats hardcoded mappings
-- **Context Awareness** - AI maintains conversation context across interactions
-- **Natural Language** - Users speak naturally, AI interprets intelligently
-- **Visual Intelligence** - AI knows when to show cards vs. text responses
-- **Commercial Intelligence** - AI balances user needs with business goals (ads, recommendations)
