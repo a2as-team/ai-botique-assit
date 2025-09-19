@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: boutique-ai-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      # Route API calls to backend
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: boutique-ai-backend
+            port:
+              number: 8000
+      # Route everything else to frontend
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: boutique-ai-frontend
+            port:
+              number: 3000
