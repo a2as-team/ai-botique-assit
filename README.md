@@ -9,12 +9,14 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
   - [🛒 Complete E-commerce Experience](#-complete-e-commerce-experience)
   - [🎨 Modern UI/UX](#-modern-uiux)
 - [📸 Screenshots](#-screenshots)
-  - [Welcome Page](#welcome-page)
-  - [Intelligent Product Search](#intelligent-product-search)
-  - [Smart Recommendations & Ads](#smart-recommendations--ads)
-  - [Shopping Cart & Add to Cart](#shopping-cart--add-to-cart)
-  - [Checkout Process](#checkout-process)
-  - [Order Confirmation](#order-confirmation)
+  - [1. Welcome](#1-welcome)
+  - [2. Product Search](#2-product-search)
+  - [3. Product Recommendation](#3-product-recommendation)
+  - [4. Product Ads](#4-product-ads)
+  - [5. Add to Cart](#5-add-to-cart)
+  - [6. View Cart](#6-view-cart)
+  - [7. Checkout and Payment](#7-checkout-and-payment)
+  - [8. Order Confirmation](#8-order-confirmation)
 - [🏗️ Architecture](#️-architecture)
   - [Backend (Python)](#backend-python)
   - [Frontend (React)](#frontend-react)
@@ -98,37 +100,44 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
 
 ## 📸 Screenshots
 
-### Welcome Page
+Experience the complete user journey through BoutiqueAI Assistant:
+
+### 1. Welcome
 The clean, modern interface welcomes users with an intuitive chat experience.
 
 ![Welcome Page](images/welcome_page.png)
 
-### Intelligent Product Search
+### 2. Product Search
 Natural language search with rich product cards, recommendations, and contextual ads.
 
 ![Product Search](images/product_search.png)
 
-### Smart Recommendations & Ads
-AI-powered "You May Also Like" suggestions and targeted promotional content.
+### 3. Product Recommendation
+AI-powered "You May Also Like" suggestions based on intelligent product relationships.
 
-<div style="display: flex; gap: 10px;">
-  <img src="images/product_recommendation.png" alt="Product Recommendations" width="49%">
-  <img src="images/product_ads.png" alt="Product Ads" width="49%">
-</div>
+![Product Recommendations](images/product_recommendation.png)
 
-### Shopping Cart & Add to Cart
-Seamless cart management with beautiful product displays and easy add-to-cart functionality.
+### 4. Product Ads
+Contextual promotional content with click-to-search functionality.
+
+![Product Ads](images/product_ads.png)
+
+### 5. Add to Cart
+Seamless add-to-cart functionality with beautiful product displays.
 
 ![Add to Cart](images/add_to_cart.png)
 
+### 6. View Cart
+Rich cart view with product images, quantities, and total pricing.
+
 ![Cart Checkout](images/cart_checkout.png)
 
-### Checkout Process
+### 7. Checkout and Payment
 Streamlined checkout with pre-filled test data and professional order processing.
 
 ![Checkout Order](images/checkout_order.png)
 
-### Order Confirmation
+### 8. Order Confirmation
 Professional order confirmation with product images and complete order details.
 
 ![Order Confirmation](images/order_confirmation.png)
@@ -259,7 +268,7 @@ The project includes intelligent gRPC URL switching:
 → Shows contextual promotional ads
 ```
 
-*See the [Product Search screenshot](#intelligent-product-search) for the visual experience.*
+*See [Screenshot #2: Product Search](#2-product-search) for the visual experience.*
 
 ### 💰 Smart Price Filtering
 ```
@@ -285,7 +294,7 @@ Click on ad: "Loafers for sale. Buy one, get second one for free"
 → Includes promotional offers for cart items
 ```
 
-*View the [Shopping Cart screenshots](#shopping-cart--add-to-cart) to see the cart management experience.*
+*View [Screenshot #5: Add to Cart](#5-add-to-cart) and [Screenshot #6: View Cart](#6-view-cart) to see the cart management experience.*
 
 ### 🎁 Recommendation System
 ```
@@ -295,7 +304,7 @@ After searching for any product
 → Recommendations based on product relationships and user context
 ```
 
-*Check out the [Smart Recommendations screenshot](#smart-recommendations--ads) to see AI-powered suggestions in action.*
+*Check out [Screenshot #3: Product Recommendation](#3-product-recommendation) and [Screenshot #4: Product Ads](#4-product-ads) to see AI-powered suggestions in action.*
 
 ### 📋 Order Confirmation with Images
 ```
@@ -305,7 +314,7 @@ After placing order
 → Complete order tracking and shipping details
 ```
 
-*See the complete [Checkout Process](#checkout-process) and [Order Confirmation](#order-confirmation) screenshots for the full purchase flow.*
+*See [Screenshot #7: Checkout and Payment](#7-checkout-and-payment) and [Screenshot #8: Order Confirmation](#8-order-confirmation) for the complete purchase flow.*
 
 ## 🧠 AI Intelligence Capabilities
 
