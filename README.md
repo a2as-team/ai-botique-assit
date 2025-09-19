@@ -8,6 +8,13 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
   - [🧠 Intelligent AI Shopping Assistant](#-intelligent-ai-shopping-assistant)
   - [🛒 Complete E-commerce Experience](#-complete-e-commerce-experience)
   - [🎨 Modern UI/UX](#-modern-uiux)
+- [📸 Screenshots](#-screenshots)
+  - [Welcome Page](#welcome-page)
+  - [Intelligent Product Search](#intelligent-product-search)
+  - [Smart Recommendations & Ads](#smart-recommendations--ads)
+  - [Shopping Cart & Add to Cart](#shopping-cart--add-to-cart)
+  - [Checkout Process](#checkout-process)
+  - [Order Confirmation](#order-confirmation)
 - [🏗️ Architecture](#️-architecture)
   - [Backend (Python)](#backend-python)
   - [Frontend (React)](#frontend-react)
@@ -88,6 +95,43 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
 - Clean order confirmation layouts
 - Minimal text descriptions with rich visual components
 - Smooth animations and transitions
+
+## 📸 Screenshots
+
+### Welcome Page
+The clean, modern interface welcomes users with an intuitive chat experience.
+
+![Welcome Page](images/welcome_page.png)
+
+### Intelligent Product Search
+Natural language search with rich product cards, recommendations, and contextual ads.
+
+![Product Search](images/product_search.png)
+
+### Smart Recommendations & Ads
+AI-powered "You May Also Like" suggestions and targeted promotional content.
+
+<div style="display: flex; gap: 10px;">
+  <img src="images/product_recommendation.png" alt="Product Recommendations" width="49%">
+  <img src="images/product_ads.png" alt="Product Ads" width="49%">
+</div>
+
+### Shopping Cart & Add to Cart
+Seamless cart management with beautiful product displays and easy add-to-cart functionality.
+
+![Add to Cart](images/add_to_cart.png)
+
+![Cart Checkout](images/cart_checkout.png)
+
+### Checkout Process
+Streamlined checkout with pre-filled test data and professional order processing.
+
+![Checkout Order](images/checkout_order.png)
+
+### Order Confirmation
+Professional order confirmation with product images and complete order details.
+
+![Order Confirmation](images/order_confirmation.png)
 
 ## 🏗️ Architecture
 
@@ -215,6 +259,8 @@ The project includes intelligent gRPC URL switching:
 → Shows contextual promotional ads
 ```
 
+*See the [Product Search screenshot](#intelligent-product-search) for the visual experience.*
+
 ### 💰 Smart Price Filtering
 ```
 "Find a gift under $50"
@@ -239,6 +285,8 @@ Click on ad: "Loafers for sale. Buy one, get second one for free"
 → Includes promotional offers for cart items
 ```
 
+*View the [Shopping Cart screenshots](#shopping-cart--add-to-cart) to see the cart management experience.*
+
 ### 🎁 Recommendation System
 ```
 After searching for any product
@@ -247,6 +295,8 @@ After searching for any product
 → Recommendations based on product relationships and user context
 ```
 
+*Check out the [Smart Recommendations screenshot](#smart-recommendations--ads) to see AI-powered suggestions in action.*
+
 ### 📋 Order Confirmation with Images
 ```
 After placing order
@@ -254,6 +304,8 @@ After placing order
 → Visual product cards instead of cryptic product IDs
 → Complete order tracking and shipping details
 ```
+
+*See the complete [Checkout Process](#checkout-process) and [Order Confirmation](#order-confirmation) screenshots for the full purchase flow.*
 
 ## 🧠 AI Intelligence Capabilities
 
