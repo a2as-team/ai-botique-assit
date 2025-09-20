@@ -17,6 +17,15 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
   - [6. View Cart](#6-view-cart)
   - [7. Checkout and Payment](#7-checkout-and-payment)
   - [8. Order Confirmation](#8-order-confirmation)
+- [🛠️ Built With](#️-built-with)
+  - [Frontend Technologies](#frontend-technologies)
+  - [Backend Technologies](#backend-technologies)
+  - [AI & Machine Learning](#ai--machine-learning)
+  - [Microservices Architecture](#microservices-architecture)
+  - [Cloud & Infrastructure](#cloud--infrastructure)
+  - [Development & DevOps Tools](#development--devops-tools)
+  - [APIs & Communication](#apis--communication)
+  - [Security & Configuration](#security--configuration)
 - [🏗️ Architecture](#️-architecture)
   - [Backend (Python)](#backend-python)
   - [Frontend (React)](#frontend-react)
@@ -141,6 +150,69 @@ Streamlined checkout with pre-filled test data and professional order processing
 Professional order confirmation with product images and complete order details.
 
 ![Order Confirmation](images/order_confirmation.png)
+
+## 🛠️ Built With
+
+### Frontend Technologies
+- **[React 18](https://react.dev/)** - Modern React with hooks and concurrent features
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for rapid styling
+- **[Framer Motion](https://www.framer.com/motion/)** - Production-ready motion library for React
+- **[Heroicons](https://heroicons.com/)** - Beautiful hand-crafted SVG icons
+- **[ReactMarkdown](https://github.com/remarkjs/react-markdown)** - Markdown component for React
+- **[Axios](https://axios-http.com/)** - Promise-based HTTP client for API communication
+- **[Node.js 18+](https://nodejs.org/)** - JavaScript runtime for frontend tooling
+- **[npm](https://www.npmjs.com/)** - Package manager and build tools
+
+### Backend Technologies
+- **[Python 3.9+](https://www.python.org/)** - Core backend programming language
+- **[FastAPI](https://fastapi.tiangolo.com/)** - High-performance web framework for building APIs
+- **[Google Agent Development Kit (ADK)](https://cloud.google.com/products/agent-builder)** - AI agent framework for intelligent conversations
+- **[gRPC](https://grpc.io/)** - High-performance RPC framework for microservices communication
+- **[Protocol Buffers](https://protobuf.dev/)** - Language-neutral data serialization
+- **[Uvicorn](https://www.uvicorn.org/)** - Lightning-fast ASGI server
+- **[Pydantic](https://docs.pydantic.dev/)** - Data validation using Python type annotations
+
+### AI & Machine Learning
+- **[Google Gemini API](https://ai.google.dev/)** - Advanced AI for natural language understanding
+- **[Google Cloud AI](https://cloud.google.com/products/ai)** - Cloud-based AI services and infrastructure
+
+### Microservices Architecture
+- **Cart Service** - Shopping cart management (gRPC)
+- **Product Catalog Service** - Product search and catalog (gRPC)
+- **Recommendation Service** - AI-powered product suggestions (gRPC)
+- **Shipping Service** - Real-time shipping quotes (gRPC)
+- **Currency Service** - Multi-currency conversion (gRPC)
+- **Payment Service** - Secure payment processing (gRPC)
+- **Email Service** - Order confirmation emails (gRPC)
+- **Checkout Service** - Order placement and processing (gRPC)
+- **Ad Service** - Contextual advertising (gRPC)
+
+### Cloud & Infrastructure
+- **[Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine)** - Managed Kubernetes for container orchestration
+- **[Google Cloud Platform](https://cloud.google.com/)** - Cloud infrastructure and services
+- **[Docker](https://www.docker.com/)** - Containerization platform
+- **[Kubernetes](https://kubernetes.io/)** - Container orchestration and management
+- **[Google Container Registry](https://cloud.google.com/container-registry)** - Private container image storage
+- **[nginx](https://nginx.org/)** - Web server and reverse proxy (production frontend)
+
+### Development & DevOps Tools
+- **[kubectl](https://kubernetes.io/docs/reference/kubectl/)** - Kubernetes command-line tool
+- **[Google Cloud SDK (gcloud)](https://cloud.google.com/sdk)** - Command-line tools for Google Cloud
+- **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** - Local containerization development
+- **[Git](https://git-scm.com/)** - Version control system
+- **[GitHub](https://github.com/)** - Code repository and collaboration platform
+
+### APIs & Communication
+- **RESTful APIs** - HTTP-based API design for frontend-backend communication
+- **gRPC Services** - High-performance RPC for microservices
+- **WebSocket-like Features** - Real-time chat experience
+- **JSON** - Data exchange format
+
+### Security & Configuration
+- **Kubernetes Secrets** - Secure API key management
+- **Environment Variables** - Configuration management
+- **CORS** - Cross-origin resource sharing
+- **Input Validation** - Pydantic-based request validation
 
 ## 🏗️ Architecture
 
