@@ -1,6 +1,6 @@
 # BoutiqueAI Assistant
 
-A modern, intelligent e-commerce chat interface powered by google ADK using Gemini LLM using simple Function calling instead of MCP or A2A keeping it modular and easy 
+An e-commerce chat interface built with Google ADK, Gemini LLM, and FastAPI. Integrates with 9 gRPC microservices for complete shopping functionality. 
 
 ![Welcome Page](images/welcome_page.png)
 
@@ -9,80 +9,92 @@ A modern, intelligent e-commerce chat interface powered by google ADK using Gemi
 ## Table of Contents
 
 1. [Architecture](#1-architecture)
-  - [System Architecture Diagram](#system-architecture-diagram)
-  - [Key Architecture Components](#key-architecture-components)
-  - [Backend (Python)](#backend-python)
-  - [Frontend (React)](#frontend-react)
+   - [System Architecture Diagram](#system-architecture-diagram)
+   - [Key Architecture Components](#key-architecture-components)
+   - [Backend (Python)](#backend-python)
+   - [Frontend (React)](#frontend-react)
+
 2. [Features](#2-features)
-  - [Intelligent AI Shopping Assistant](#intelligent-ai-shopping-assistant)
-  - [Complete E-commerce Experience](#complete-e-commerce-experience)
-  - [Modern UI/UX](#modern-uiux)
+   - [Intelligent AI Shopping Assistant](#intelligent-ai-shopping-assistant)
+   - [Complete E-commerce Experience](#complete-e-commerce-experience)
+   - [Modern UI/UX](#modern-uiux)
+
 3. [Product Demo](#3-product-demo)
-  - [1. Welcome](#1-welcome)
-  - [2. Product Search](#2-product-search)
-  - [3. Product Recommendation](#3-product-recommendation)
-  - [4. Product Ads](#4-product-ads)
-  - [5. Add to Cart](#5-add-to-cart)
-  - [6. View Cart](#6-view-cart)
-  - [7. Checkout and Payment](#7-checkout-and-payment)
-  - [8. Order Confirmation](#8-order-confirmation)
+   - [1. Welcome](#1-welcome)
+   - [2. Product Search](#2-product-search)
+   - [3. Product Recommendation](#3-product-recommendation)
+   - [4. Product Ads](#4-product-ads)
+   - [5. Add to Cart](#5-add-to-cart)
+   - [6. View Cart](#6-view-cart)
+   - [7. Checkout and Payment](#7-checkout-and-payment)
+   - [8. Order Confirmation](#8-order-confirmation)
+
 4. [Built With](#4-built-with)
-  - [Frontend Technologies](#frontend-technologies)
-  - [Backend Technologies](#backend-technologies)
-  - [AI & Machine Learning](#ai--machine-learning)
-  - [Microservices Architecture](#microservices-architecture)
-  - [Cloud & Infrastructure](#cloud--infrastructure)
-  - [Development & DevOps Tools](#development--devops-tools)
-  - [APIs & Communication](#apis--communication)
-  - [Security & Configuration](#security--configuration)
+   - [Frontend Technologies](#frontend-technologies)
+   - [Backend Technologies](#backend-technologies)
+   - [AI & Machine Learning](#ai--machine-learning)
+   - [Microservices Architecture](#microservices-architecture)
+   - [Cloud & Infrastructure](#cloud--infrastructure)
+   - [Development & DevOps Tools](#development--devops-tools)
+   - [APIs & Communication](#apis--communication)
+   - [Security & Configuration](#security--configuration)
+
 5. [Prerequisites](#5-prerequisites)
-  - [For Local Development](#for-local-development)
-  - [For GKE Deployment](#for-gke-deployment)
+   - [For Local Development](#for-local-development)
+   - [For GKE Deployment](#for-gke-deployment)
+
 6. [Quick Start](#6-quick-start)
-  - [1. Clone and Setup](#1-clone-and-setup)
-  - [2. Enhanced Local Development (Recommended)](#2-enhanced-local-development-recommended)
-  - [3. Manual Development Setup](#3-manual-development-setup)
-  - [4. gRPC URL Management](#4-grpc-url-management)
-  - [5. Access the Application](#5-access-the-application)
+   - [1. Clone and Setup](#1-clone-and-setup)
+   - [2. Enhanced Local Development (Recommended)](#2-enhanced-local-development-recommended)
+   - [3. Manual Development Setup](#3-manual-development-setup)
+   - [4. gRPC URL Management](#4-grpc-url-management)
+   - [5. Access the Application](#5-access-the-application)
+
 7. [Usage Examples](#7-usage-examples)
-  - [Intelligent Product Search](#intelligent-product-search)
-  - [Smart Price Filtering](#smart-price-filtering)
-  - [Promotional Intelligence](#promotional-intelligence)
-  - [Enhanced Shopping Cart](#enhanced-shopping-cart)
-  - [Recommendation System](#recommendation-system)
-  - [Order Confirmation with Images](#order-confirmation-with-images)
+   - [Intelligent Product Search](#intelligent-product-search)
+   - [Smart Price Filtering](#smart-price-filtering)
+   - [Promotional Intelligence](#promotional-intelligence)
+   - [Enhanced Shopping Cart](#enhanced-shopping-cart)
+   - [Recommendation System](#recommendation-system)
+   - [Order Confirmation with Images](#order-confirmation-with-images)
+
 8. [AI Intelligence Capabilities](#8-ai-intelligence-capabilities)
-  - [Smart Search Intelligence](#smart-search-intelligence)
-  - [Intelligent Price Filtering](#intelligent-price-filtering)
-  - [Intelligent Recommendations](#intelligent-recommendations)
-  - [Smart Promotional Integration](#smart-promotional-integration)
-  - [Visual Intelligence](#visual-intelligence)
+   - [Smart Search Intelligence](#smart-search-intelligence)
+   - [Intelligent Price Filtering](#intelligent-price-filtering)
+   - [Intelligent Recommendations](#intelligent-recommendations)
+   - [Smart Promotional Integration](#smart-promotional-integration)
+   - [Visual Intelligence](#visual-intelligence)
+
 9. [Component Architecture](#9-component-architecture)
-  - [Key React Components](#key-react-components)
-  - [Smart Message Detection](#smart-message-detection)
+   - [Key React Components](#key-react-components)
+   - [Smart Message Detection](#smart-message-detection)
+
 10. [Configuration](#10-configuration)
-  - [Environment Variables](#environment-variables)
+    - [Environment Variables](#environment-variables)
+
 11. [gRPC & Protocol Buffers](#11-grpc--protocol-buffers)
-  - [Key Files](#key-files)
-  - [Microservices Defined in Proto](#microservices-defined-in-proto)
-  - [How gRPC Works in This Project](#how-grpc-works-in-this-project)
-  - [Example gRPC Usage](#example-grpc-usage)
-  - [Regenerating gRPC Files (if needed)](#regenerating-grpc-files-if-needed)
-  - [Why gRPC?](#why-grpc)
-  - [Understanding Message Types](#understanding-message-types)
-  - [Test Data](#test-data)
+    - [Key Files](#key-files)
+    - [Microservices Defined in Proto](#microservices-defined-in-proto)
+    - [How gRPC Works in This Project](#how-grpc-works-in-this-project)
+    - [Example gRPC Usage](#example-grpc-usage)
+    - [Regenerating gRPC Files (if needed)](#regenerating-grpc-files-if-needed)
+    - [Why gRPC?](#why-grpc)
+    - [Understanding Message Types](#understanding-message-types)
+    - [Test Data](#test-data)
+
 12. [Production Deployment to GKE](#12-production-deployment-to-gke)
-  - [Prerequisites for GKE Deployment](#prerequisites-for-gke-deployment)
-  - [Enhanced One-Command Deployment (Recommended)](#enhanced-one-command-deployment-recommended)
-  - [Manual Deployment (Alternative)](#manual-deployment-alternative)
-  - [Accessing Your Deployed Application](#accessing-your-deployed-application)
-  - [Production Architecture](#production-architecture)
+    - [Prerequisites for GKE Deployment](#prerequisites-for-gke-deployment)
+    - [Enhanced One-Command Deployment (Recommended)](#enhanced-one-command-deployment-recommended)
+    - [Manual Deployment (Alternative)](#manual-deployment-alternative)
+    - [Accessing Your Deployed Application](#accessing-your-deployed-application)
+    - [Production Architecture](#production-architecture)
+
 13. [Development](#13-development)
-  - [File Structure](#file-structure)
-  - [Enhanced Development Scripts](#enhanced-development-scripts)
-  - [API Endpoints](#api-endpoints)
-  - [Stopping Services](#stopping-services)
-  - [Development Workflow Best Practices](#development-workflow-best-practices)
+    - [File Structure](#file-structure)
+    - [Enhanced Development Scripts](#enhanced-development-scripts)
+    - [API Endpoints](#api-endpoints)
+    - [Stopping Services](#stopping-services)
+    - [Development Workflow Best Practices](#development-workflow-best-practices)
 
 ## 1. Architecture
 
@@ -129,24 +141,24 @@ A modern, intelligent e-commerce chat interface powered by google ADK using Gemi
 
 ## 2. Features
 
-### Intelligent AI Shopping Assistant
-- **Smart Search** - Natural language with synonym understanding (e.g., "shoes" → "footwear")
-- **Price Intelligence** - Understands "under $50", "cheap gifts", "budget-friendly" queries
-- **Product Recommendations** - Intelligent "You May Also Like" suggestions
-- **Promotional Intelligence** - Product-specific ads with contextual offers
-- **Conversational Shopping** - Stays in chat experience, no external redirects
-- **Visual Product Discovery** - Rich product cards with images and pricing
+### AI Shopping Assistant
+- **Natural Language Search** - Search products using conversational language
+- **Price Filtering** - Filter products by price ranges
+- **Product Recommendations** - Get product suggestions via recommendation service
+- **Product Ads** - Display contextual advertisements
+- **Chat Interface** - Complete shopping workflow within chat
+- **Product Display** - Product cards with images and pricing
 
-### Complete E-commerce Experience
-- **Product Catalog** - Browse and search products with intelligent matching
-- **Shopping Cart** - Add items, view cart with product images and prices
-- **Checkout Process** - Beautiful form with pre-filled test data
-- **Order Confirmation** - Professional order summary with product images and names
-- **Shipping Integration** - Real-time shipping quotes and address handling
-- **Payment Processing** - Secure payment with test credit card data
-- **Email Notifications** - Order confirmation emails
-- **Currency Support** - Multi-currency conversion capabilities
-- **Smart Advertising** - Contextual product advertisements with click-to-search
+### E-commerce Features
+- **Product Catalog** - Browse and search products via gRPC services
+- **Shopping Cart** - Add/remove items, view cart contents
+- **Checkout Process** - Complete checkout form with test data
+- **Order Confirmation** - Order summary with product details
+- **Shipping Service** - Get shipping quotes and process shipments
+- **Payment Service** - Process payments via gRPC payment service
+- **Email Service** - Send order confirmation emails
+- **Currency Service** - Currency conversion support
+- **Ad Service** - Display product advertisements
 
 ### Modern UI/UX
 - Responsive design for mobile and desktop
@@ -203,65 +215,52 @@ Professional order confirmation with product images and complete order details.
 ## 4. Built With
 
 ### Frontend Technologies
-- **[React 18](https://react.dev/)** - Modern React with hooks and concurrent features
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for rapid styling
-- **[Framer Motion](https://www.framer.com/motion/)** - Production-ready motion library for React
-- **[Heroicons](https://heroicons.com/)** - Beautiful hand-crafted SVG icons
-- **[ReactMarkdown](https://github.com/remarkjs/react-markdown)** - Markdown component for React
-- **[Axios](https://axios-http.com/)** - Promise-based HTTP client for API communication
-- **[Node.js 18+](https://nodejs.org/)** - JavaScript runtime for frontend tooling
-- **[npm](https://www.npmjs.com/)** - Package manager and build tools
+- **React 18** - Component-based UI framework
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Heroicons** - SVG icon library
+- **ReactMarkdown** - Markdown rendering
+- **Axios** - HTTP client
 
 ### Backend Technologies
-- **[Python 3.9+](https://www.python.org/)** - Core backend programming language
-- **[FastAPI](https://fastapi.tiangolo.com/)** - High-performance web framework for building APIs
-- **[Google Agent Development Kit (ADK)](https://cloud.google.com/products/agent-builder)** - AI agent framework for intelligent conversations
-- **[gRPC](https://grpc.io/)** - High-performance RPC framework for microservices communication
-- **[Protocol Buffers](https://protobuf.dev/)** - Language-neutral data serialization
-- **[Uvicorn](https://www.uvicorn.org/)** - Lightning-fast ASGI server
-- **[Pydantic](https://docs.pydantic.dev/)** - Data validation using Python type annotations
+- **Python 3.9+** - Backend programming language
+- **FastAPI** - Web framework for APIs
+- **Google ADK** - AI agent framework
+- **gRPC** - Microservices communication
+- **Uvicorn** - ASGI server
+- **Pydantic** - Data validation
 
-### AI & Machine Learning
-- **[Google Gemini API](https://ai.google.dev/)** - Advanced AI for natural language understanding
-- **[Google Cloud AI](https://cloud.google.com/products/ai)** - Cloud-based AI services and infrastructure
+### Dependencies
+```bash
+# Backend (requirements.txt)
+fastapi>=0.115.0
+uvicorn>=0.32.0
+grpcio==1.75.0
+google-adk==1.14.1
+# ... (see requirements.txt for complete list)
 
-### Microservices Architecture
-- **Cart Service** - Shopping cart management (gRPC)
-- **Product Catalog Service** - Product search and catalog (gRPC)
-- **Recommendation Service** - AI-powered product suggestions (gRPC)
-- **Shipping Service** - Real-time shipping quotes (gRPC)
-- **Currency Service** - Multi-currency conversion (gRPC)
-- **Payment Service** - Secure payment processing (gRPC)
-- **Email Service** - Order confirmation emails (gRPC)
-- **Checkout Service** - Order placement and processing (gRPC)
-- **Ad Service** - Contextual advertising (gRPC)
+# Frontend (package.json)
+react: ^18.2.0
+@heroicons/react: ^2.0.18
+framer-motion: ^10.16.4
+tailwindcss: ^3.3.5
+# ... (see package.json for complete list)
+```
 
-### Cloud & Infrastructure
-- **[Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine)** - Managed Kubernetes for container orchestration
-- **[Google Cloud Platform](https://cloud.google.com/)** - Cloud infrastructure and services
-- **[Docker](https://www.docker.com/)** - Containerization platform
-- **[Kubernetes](https://kubernetes.io/)** - Container orchestration and management
-- **[Google Container Registry](https://cloud.google.com/container-registry)** - Private container image storage
-- **[nginx](https://nginx.org/)** - Web server and reverse proxy (production frontend)
+### gRPC Microservices Integration
+Integrates with existing [Google Cloud Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo) microservices:
 
-### Development & DevOps Tools
-- **[kubectl](https://kubernetes.io/docs/reference/kubectl/)** - Kubernetes command-line tool
-- **[Google Cloud SDK (gcloud)](https://cloud.google.com/sdk)** - Command-line tools for Google Cloud
-- **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** - Local containerization development
-- **[Git](https://git-scm.com/)** - Version control system
-- **[GitHub](https://github.com/)** - Code repository and collaboration platform
+- **ProductCatalogService** (port 3550) - Product search and catalog
+- **CartService** (port 7070) - Shopping cart management  
+- **RecommendationService** (port 8080) - Product recommendations
+- **ShippingService** (port 50051) - Shipping quotes and processing
+- **CurrencyService** (port 7000) - Currency conversion
+- **PaymentService** (port 50051) - Payment processing
+- **EmailService** (port 5000) - Order confirmation emails
+- **CheckoutService** (port 5050) - Complete order processing
+- **AdService** (port 9555) - Product advertisements
 
-### APIs & Communication
-- **RESTful APIs** - HTTP-based API design for frontend-backend communication
-- **gRPC Services** - High-performance RPC for microservices
-- **WebSocket-like Features** - Real-time chat experience
-- **JSON** - Data exchange format
-
-### Security & Configuration
-- **Kubernetes Secrets** - Secure API key management
-- **Environment Variables** - Configuration management
-- **CORS** - Cross-origin resource sharing
-- **Input Validation** - Pydantic-based request validation
+*Note: These are pre-existing microservices from Google's Online Boutique demo, not custom-built for this project.*
 
 ## 5. Prerequisites
 
@@ -412,75 +411,67 @@ After placing order
 
 *See [Screenshot #7: Checkout and Payment](#7-checkout-and-payment) and [Screenshot #8: Order Confirmation](#8-order-confirmation) for the complete purchase flow.*
 
-## 8. AI Intelligence Capabilities
+## 8. AI Agent Functions
 
-### Smart Search Intelligence
-The AI agent uses advanced natural language understanding to handle product searches:
+The Google ADK agent provides these gRPC function tools:
 
-- **Synonym Matching**: "shoes" automatically tries "footwear", "sneakers"
-- **Category Understanding**: Recognizes product types and related categories  
-- **Multiple Attempts**: If initial search fails, tries alternative terms intelligently
-- **Context Awareness**: Understands user intent beyond exact keyword matching
+### Product Catalog Functions  
+- **list_products** - List all available products
+- **search_products** - Search products by keyword
+- **get_product** - Get specific product details
+- **filter_products_by_price** - Filter products by price range
 
-### Intelligent Price Filtering
-Dedicated price filtering with natural language understanding:
+### Shopping Cart Functions
+- **add_item_to_cart** - Add items to user cart
+- **get_cart** - Retrieve cart contents  
+- **empty_cart** - Clear cart contents
 
-- **Natural Queries**: "under $50", "below $30", "cheap gifts", "budget-friendly"
-- **Automatic Filtering**: Uses `filter_products_by_price` function for accuracy
-- **Visual Results**: Filtered products shown as product cards, not just text
-- **Promotional Integration**: Includes relevant ads for price-filtered items
+### Order Processing Functions
+- **place_order** - Process complete order via checkout service
+- **initiate_checkout** - Start checkout process
 
-### Intelligent Recommendations
-Leverages the Recommendation Service microservice for smart suggestions:
+### Shipping & Payment Functions
+- **get_shipping_quote** - Get shipping cost estimates
+- **ship_order** - Process shipping
+- **charge_card** - Process credit card payments
 
-- **Context-Aware**: Uses `list_recommendations` based on product relationships
-- **Product-Based**: Recommendations based on products user is currently viewing
-- **Cross-Category**: Suggests complementary items from different categories
-- **Always Present**: Shown with every product search for discovery
+### Additional Service Functions
+- **list_recommendations** - Get product recommendations
+- **get_ads** - Retrieve contextual advertisements  
+- **get_supported_currencies** - List available currencies
+- **convert_currency** - Convert between currencies
+- **send_order_confirmation** - Send order confirmation emails
 
-### Smart Promotional Integration
-Product-specific advertising with intelligent ad handling:
-
-- **Contextual Ads**: Uses product IDs for targeted promotional content
-- **Click Intelligence**: AI parses ad text to understand product intent
-- **In-Chat Experience**: Ad clicks trigger searches within chat (no redirects)
-- **Mandatory Display**: Every product result includes promotional content
-
-### Visual Intelligence
-Converts complex data into beautiful visual components:
-
-- **Product Cards**: Rich images, pricing, and action buttons
-- **Order Enhancement**: Product images and names in confirmations
-- **Loading States**: Smooth transitions while fetching data
-- **Error Handling**: Graceful fallbacks for missing images/data
+*All functions call the corresponding gRPC microservices from Google's Online Boutique demo.*
 
 ## 9. Component Architecture
 
-### Key React Components
+### React Components
 
 ```
-ChatInterface.js       # Main chat container with auto-scroll
-├── MessageList.js     # Message rendering and management
-├── Message.js         # Individual message with smart content detection
+ChatInterface.js       # Main chat container
+├── MessageList.js     # Message rendering
+├── Message.js         # Individual message with content detection
 │   ├── ProductCard.js # Product display with "Add to Cart"
-│   ├── CartView.js    # Rich cart display with images and pricing
-│   ├── CheckoutForm.js # Beautiful checkout form
-│   └── OrderConfirmation.js # Professional order summary with images
-├── ChatInput.js       # Message input with loading states
-└── ChatHeader.js      # Header with session management
+│   ├── CartView.js    # Cart display with items and pricing
+│   ├── CheckoutForm.js # Order checkout form
+│   └── OrderConfirmation.js # Order summary
+├── ChatInput.js       # Message input
+├── ChatHeader.js      # Chat header
+├── QuickReplies.js    # Quick reply buttons
+├── TypingIndicator.js # Loading indicator
+└── WelcomeScreen.js   # Initial welcome screen
 ```
 
-### Smart Message Detection
+### Message Content Detection
 
-The `Message.js` component intelligently detects content types:
-- **Product Search** → Shows product cards with recommendations and ads
-- **Price Filtering** → Displays filtered product cards (e.g., "under $50")
-- **Cart Queries** → Rich cart view with images and promotional suggestions
-- **Promotional Ads** → Beautiful ad cards with click-to-search functionality
-- **Checkout Intent** → Shows checkout form with pre-filled test data
-- **Order Completion** → Enhanced order confirmation with product images and names
-- **Recommendations** → "You May Also Like" horizontal scrolling cards
-- **General Chat** → Standard markdown rendering with intelligent responses
+The `Message.js` component renders different content types:
+- **Product lists** → Product cards with images and pricing
+- **Cart contents** → Cart view with items and totals
+- **Checkout** → Checkout form with order processing
+- **Order confirmation** → Order summary with details
+- **Recommendations** → Product recommendation cards
+- **Text responses** → Markdown formatted text
 
 ## 10. Configuration
 
