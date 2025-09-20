@@ -1,19 +1,23 @@
-# BoutiqueAI Assistant 🛍️
+# BoutiqueAI Assistant
 
-A modern, intelligent e-commerce chat interface powered by AI. Built with microservices architecture and beautiful UI components for a complete shopping experience.
+A modern, intelligent e-commerce chat interface powered by google ADK using Gemini LLM using simple Function calling instead of MCP or A2A keeping it modular and easy 
 
-## 📑 Table of Contents
+![Welcome Page](images/welcome_page.png)
 
-- [🏗️ Architecture](#️-architecture)
+![BoutiqueAI Assistant - System Architecture](images/Architecture-Online-Boutique-AI-Assit.png)
+
+## Table of Contents
+
+1. [Architecture](#1-architecture)
   - [System Architecture Diagram](#system-architecture-diagram)
   - [Key Architecture Components](#key-architecture-components)
   - [Backend (Python)](#backend-python)
   - [Frontend (React)](#frontend-react)
-- [✨ Features](#-features)
-  - [🧠 Intelligent AI Shopping Assistant](#-intelligent-ai-shopping-assistant)
-  - [🛒 Complete E-commerce Experience](#-complete-e-commerce-experience)
-  - [🎨 Modern UI/UX](#-modern-uiux)
-- [🎬 Product Demo](#-product-demo)
+2. [Features](#2-features)
+  - [Intelligent AI Shopping Assistant](#intelligent-ai-shopping-assistant)
+  - [Complete E-commerce Experience](#complete-e-commerce-experience)
+  - [Modern UI/UX](#modern-uiux)
+3. [Product Demo](#3-product-demo)
   - [1. Welcome](#1-welcome)
   - [2. Product Search](#2-product-search)
   - [3. Product Recommendation](#3-product-recommendation)
@@ -22,7 +26,7 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
   - [6. View Cart](#6-view-cart)
   - [7. Checkout and Payment](#7-checkout-and-payment)
   - [8. Order Confirmation](#8-order-confirmation)
-- [🛠️ Built With](#️-built-with)
+4. [Built With](#4-built-with)
   - [Frontend Technologies](#frontend-technologies)
   - [Backend Technologies](#backend-technologies)
   - [AI & Machine Learning](#ai--machine-learning)
@@ -31,56 +35,56 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
   - [Development & DevOps Tools](#development--devops-tools)
   - [APIs & Communication](#apis--communication)
   - [Security & Configuration](#security--configuration)
-- [📋 Prerequisites](#-prerequisites)
+5. [Prerequisites](#5-prerequisites)
   - [For Local Development](#for-local-development)
   - [For GKE Deployment](#for-gke-deployment)
-- [🚀 Quick Start](#-quick-start)
+6. [Quick Start](#6-quick-start)
   - [1. Clone and Setup](#1-clone-and-setup)
-  - [2. 🛠️ Enhanced Local Development (Recommended)](#2-️-enhanced-local-development-recommended)
-  - [3. ⚙️ Manual Development Setup](#3-️-manual-development-setup)
-  - [4. 🔧 gRPC URL Management](#4--grpc-url-management)
+  - [2. Enhanced Local Development (Recommended)](#2-enhanced-local-development-recommended)
+  - [3. Manual Development Setup](#3-manual-development-setup)
+  - [4. gRPC URL Management](#4-grpc-url-management)
   - [5. Access the Application](#5-access-the-application)
-- [🎯 Usage Examples](#-usage-examples)
-  - [🔍 Intelligent Product Search](#-intelligent-product-search)
-  - [💰 Smart Price Filtering](#-smart-price-filtering)
-  - [🏷️ Promotional Intelligence](#️-promotional-intelligence)
-  - [🛒 Enhanced Shopping Cart](#-enhanced-shopping-cart)
-  - [🎁 Recommendation System](#-recommendation-system)
-  - [📋 Order Confirmation with Images](#-order-confirmation-with-images)
-- [🧠 AI Intelligence Capabilities](#-ai-intelligence-capabilities)
-  - [🔍 Smart Search Intelligence](#-smart-search-intelligence)
-  - [💰 Intelligent Price Filtering](#-intelligent-price-filtering)
-  - [🎯 Intelligent Recommendations](#-intelligent-recommendations)
-  - [🏷️ Smart Promotional Integration](#️-smart-promotional-integration)
-  - [🎨 Visual Intelligence](#-visual-intelligence)
-- [🏗️ Component Architecture](#️-component-architecture)
+7. [Usage Examples](#7-usage-examples)
+  - [Intelligent Product Search](#intelligent-product-search)
+  - [Smart Price Filtering](#smart-price-filtering)
+  - [Promotional Intelligence](#promotional-intelligence)
+  - [Enhanced Shopping Cart](#enhanced-shopping-cart)
+  - [Recommendation System](#recommendation-system)
+  - [Order Confirmation with Images](#order-confirmation-with-images)
+8. [AI Intelligence Capabilities](#8-ai-intelligence-capabilities)
+  - [Smart Search Intelligence](#smart-search-intelligence)
+  - [Intelligent Price Filtering](#intelligent-price-filtering)
+  - [Intelligent Recommendations](#intelligent-recommendations)
+  - [Smart Promotional Integration](#smart-promotional-integration)
+  - [Visual Intelligence](#visual-intelligence)
+9. [Component Architecture](#9-component-architecture)
   - [Key React Components](#key-react-components)
   - [Smart Message Detection](#smart-message-detection)
-- [🔧 Configuration](#-configuration)
+10. [Configuration](#10-configuration)
   - [Environment Variables](#environment-variables)
-- [🌐 gRPC & Protocol Buffers](#-grpc--protocol-buffers)
-  - [📄 Key Files](#-key-files)
-  - [🏗️ Microservices Defined in Proto](#️-microservices-defined-in-proto)
-  - [🔄 How gRPC Works in This Project](#-how-grpc-works-in-this-project)
-  - [💡 Example gRPC Usage](#-example-grpc-usage)
-  - [🔧 Regenerating gRPC Files (if needed)](#-regenerating-grpc-files-if-needed)
-  - [🎯 Why gRPC?](#-why-grpc)
-  - [📚 Understanding Message Types](#-understanding-message-types)
+11. [gRPC & Protocol Buffers](#11-grpc--protocol-buffers)
+  - [Key Files](#key-files)
+  - [Microservices Defined in Proto](#microservices-defined-in-proto)
+  - [How gRPC Works in This Project](#how-grpc-works-in-this-project)
+  - [Example gRPC Usage](#example-grpc-usage)
+  - [Regenerating gRPC Files (if needed)](#regenerating-grpc-files-if-needed)
+  - [Why gRPC?](#why-grpc)
+  - [Understanding Message Types](#understanding-message-types)
   - [Test Data](#test-data)
-- [🔄 Production Deployment to GKE](#-production-deployment-to-gke)
+12. [Production Deployment to GKE](#12-production-deployment-to-gke)
   - [Prerequisites for GKE Deployment](#prerequisites-for-gke-deployment)
-  - [🚀 Enhanced One-Command Deployment (Recommended)](#-enhanced-one-command-deployment-recommended)
-  - [⚙️ Manual Deployment (Alternative)](#️-manual-deployment-alternative)
+  - [Enhanced One-Command Deployment (Recommended)](#enhanced-one-command-deployment-recommended)
+  - [Manual Deployment (Alternative)](#manual-deployment-alternative)
   - [Accessing Your Deployed Application](#accessing-your-deployed-application)
   - [Production Architecture](#production-architecture)
-- [🛠️ Development](#️-development)
+13. [Development](#13-development)
   - [File Structure](#file-structure)
-  - [🔧 Enhanced Development Scripts](#-enhanced-development-scripts)
+  - [Enhanced Development Scripts](#enhanced-development-scripts)
   - [API Endpoints](#api-endpoints)
   - [Stopping Services](#stopping-services)
   - [Development Workflow Best Practices](#development-workflow-best-practices)
 
-## 🏗️ Architecture
+## 1. Architecture
 
 ### System Architecture Diagram
 
@@ -123,9 +127,9 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
 - **ReactMarkdown** - Rich text rendering
 - **Axios** - HTTP client for API communication
 
-## ✨ Features
+## 2. Features
 
-### 🧠 Intelligent AI Shopping Assistant
+### Intelligent AI Shopping Assistant
 - **Smart Search** - Natural language with synonym understanding (e.g., "shoes" → "footwear")
 - **Price Intelligence** - Understands "under $50", "cheap gifts", "budget-friendly" queries
 - **Product Recommendations** - Intelligent "You May Also Like" suggestions
@@ -133,7 +137,7 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
 - **Conversational Shopping** - Stays in chat experience, no external redirects
 - **Visual Product Discovery** - Rich product cards with images and pricing
 
-### 🛒 Complete E-commerce Experience
+### Complete E-commerce Experience
 - **Product Catalog** - Browse and search products with intelligent matching
 - **Shopping Cart** - Add items, view cart with product images and prices
 - **Checkout Process** - Beautiful form with pre-filled test data
@@ -144,7 +148,7 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
 - **Currency Support** - Multi-currency conversion capabilities
 - **Smart Advertising** - Contextual product advertisements with click-to-search
 
-### 🎨 Modern UI/UX
+### Modern UI/UX
 - Responsive design for mobile and desktop
 - Auto-scrolling chat interface
 - Beautiful product cards with "Add to Cart" functionality
@@ -152,7 +156,7 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
 - Minimal text descriptions with rich visual components
 - Smooth animations and transitions
 
-## 🎬 Product Demo
+## 3. Product Demo
 
 Experience the complete user journey through BoutiqueAI Assistant:
 
@@ -196,7 +200,7 @@ Professional order confirmation with product images and complete order details.
 
 ![Order Confirmation](images/order_confirmation.png)
 
-## 🛠️ Built With
+## 4. Built With
 
 ### Frontend Technologies
 - **[React 18](https://react.dev/)** - Modern React with hooks and concurrent features
@@ -259,7 +263,7 @@ Professional order confirmation with product images and complete order details.
 - **CORS** - Cross-origin resource sharing
 - **Input Validation** - Pydantic-based request validation
 
-## 📋 Prerequisites
+## 5. Prerequisites
 
 ### For Local Development
 - **Python 3.9+**
@@ -273,7 +277,7 @@ Professional order confirmation with product images and complete order details.
 - **kubectl**
 - **GKE cluster** with Online Boutique services
 
-## 🚀 Quick Start
+## 6. Quick Start
 
 ### 1. Clone and Setup
 
@@ -290,7 +294,7 @@ npm install
 cd ..
 ```
 
-### 2. 🛠️ Enhanced Local Development (Recommended)
+### 2. Enhanced Local Development (Recommended)
 
 **One-command local development startup:**
 ```bash
@@ -310,7 +314,7 @@ This script automatically:
 ./stop_local_dev.sh
 ```
 
-### 3. ⚙️ Manual Development Setup
+### 3. Manual Development Setup
 
 If you prefer manual control:
 
@@ -325,7 +329,7 @@ If you prefer manual control:
 ./start_all.sh  # or run backend/frontend separately
 ```
 
-### 4. 🔧 gRPC URL Management
+### 4. gRPC URL Management
 
 The project includes intelligent gRPC URL switching:
 
@@ -349,9 +353,9 @@ The project includes intelligent gRPC URL switching:
 - **Backend API:** http://localhost:8000
 - **API Docs:** http://localhost:8000/docs
 
-## 🎯 Usage Examples
+## 7. Usage Examples
 
-### 🔍 Intelligent Product Search
+### Intelligent Product Search
 ```
 "Find shoes"
 → AI tries "shoes", then "footwear", shows all relevant products
@@ -362,7 +366,7 @@ The project includes intelligent gRPC URL switching:
 
 *See [Screenshot #2: Product Search](#2-product-search) for the visual experience.*
 
-### 💰 Smart Price Filtering
+### Smart Price Filtering
 ```
 "Find a gift under $50"
 → AI understands price query and filters products automatically
@@ -370,7 +374,7 @@ The project includes intelligent gRPC URL switching:
 → Includes promotional offers for budget items
 ```
 
-### 🏷️ Promotional Intelligence
+### Promotional Intelligence
 ```
 Click on ad: "Loafers for sale. Buy one, get second one for free"
 → AI understands promotional text and searches for loafers
@@ -378,7 +382,7 @@ Click on ad: "Loafers for sale. Buy one, get second one for free"
 → Shows product details with add-to-cart functionality
 ```
 
-### 🛒 Enhanced Shopping Cart
+### Enhanced Shopping Cart
 ```
 "What's in my cart?"
 → Shows rich cart view with product images, quantities, and total pricing
@@ -388,7 +392,7 @@ Click on ad: "Loafers for sale. Buy one, get second one for free"
 
 *View [Screenshot #5: Add to Cart](#5-add-to-cart) and [Screenshot #6: View Cart](#6-view-cart) to see the cart management experience.*
 
-### 🎁 Recommendation System
+### Recommendation System
 ```
 After searching for any product
 → AI automatically calls recommendation service
@@ -398,7 +402,7 @@ After searching for any product
 
 *Check out [Screenshot #3: Product Recommendation](#3-product-recommendation) and [Screenshot #4: Product Ads](#4-product-ads) to see AI-powered suggestions in action.*
 
-### 📋 Order Confirmation with Images
+### Order Confirmation with Images
 ```
 After placing order
 → Professional order confirmation with product images and names
@@ -408,9 +412,9 @@ After placing order
 
 *See [Screenshot #7: Checkout and Payment](#7-checkout-and-payment) and [Screenshot #8: Order Confirmation](#8-order-confirmation) for the complete purchase flow.*
 
-## 🧠 AI Intelligence Capabilities
+## 8. AI Intelligence Capabilities
 
-### 🔍 Smart Search Intelligence
+### Smart Search Intelligence
 The AI agent uses advanced natural language understanding to handle product searches:
 
 - **Synonym Matching**: "shoes" automatically tries "footwear", "sneakers"
@@ -418,7 +422,7 @@ The AI agent uses advanced natural language understanding to handle product sear
 - **Multiple Attempts**: If initial search fails, tries alternative terms intelligently
 - **Context Awareness**: Understands user intent beyond exact keyword matching
 
-### 💰 Intelligent Price Filtering
+### Intelligent Price Filtering
 Dedicated price filtering with natural language understanding:
 
 - **Natural Queries**: "under $50", "below $30", "cheap gifts", "budget-friendly"
@@ -426,7 +430,7 @@ Dedicated price filtering with natural language understanding:
 - **Visual Results**: Filtered products shown as product cards, not just text
 - **Promotional Integration**: Includes relevant ads for price-filtered items
 
-### 🎯 Intelligent Recommendations
+### Intelligent Recommendations
 Leverages the Recommendation Service microservice for smart suggestions:
 
 - **Context-Aware**: Uses `list_recommendations` based on product relationships
@@ -434,7 +438,7 @@ Leverages the Recommendation Service microservice for smart suggestions:
 - **Cross-Category**: Suggests complementary items from different categories
 - **Always Present**: Shown with every product search for discovery
 
-### 🏷️ Smart Promotional Integration
+### Smart Promotional Integration
 Product-specific advertising with intelligent ad handling:
 
 - **Contextual Ads**: Uses product IDs for targeted promotional content
@@ -442,7 +446,7 @@ Product-specific advertising with intelligent ad handling:
 - **In-Chat Experience**: Ad clicks trigger searches within chat (no redirects)
 - **Mandatory Display**: Every product result includes promotional content
 
-### 🎨 Visual Intelligence
+### Visual Intelligence
 Converts complex data into beautiful visual components:
 
 - **Product Cards**: Rich images, pricing, and action buttons
@@ -450,7 +454,7 @@ Converts complex data into beautiful visual components:
 - **Loading States**: Smooth transitions while fetching data
 - **Error Handling**: Graceful fallbacks for missing images/data
 
-## 🏗️ Component Architecture
+## 9. Component Architecture
 
 ### Key React Components
 
@@ -478,7 +482,7 @@ The `Message.js` component intelligently detects content types:
 - **Recommendations** → "You May Also Like" horizontal scrolling cards
 - **General Chat** → Standard markdown rendering with intelligent responses
 
-## 🔧 Configuration
+## 10. Configuration
 
 ### Environment Variables
 
@@ -490,11 +494,11 @@ REACT_APP_API_URL=http://localhost:8000
 # Microservice ports are configured in agent.py
 ```
 
-## 🌐 gRPC & Protocol Buffers
+## 11. gRPC & Protocol Buffers
 
 This project uses **gRPC** (Google Remote Procedure Call) to communicate with microservices. Understanding these files is crucial for development:
 
-### 📄 Key Files
+### Key Files
 
 #### `hipstershop.proto` 
 - **Protocol Buffer definition file** - The source of truth
@@ -514,7 +518,7 @@ This project uses **gRPC** (Google Remote Procedure Call) to communicate with mi
 - Used in `agent.py` to make gRPC calls to microservices
 - **DO NOT EDIT** - Regenerated when .proto file changes
 
-### 🏗️ Microservices Defined in Proto
+### Microservices Defined in Proto
 
 The `hipstershop.proto` file defines **9 microservices**:
 
@@ -530,14 +534,14 @@ The `hipstershop.proto` file defines **9 microservices**:
 | **CheckoutService** | Order placement | 5050 | `PlaceOrder` |
 | **AdService** | Contextual advertising | 9555 | `GetAds` |
 
-### 🔄 How gRPC Works in This Project
+### How gRPC Works in This Project
 
 1. **Proto Definition** → `hipstershop.proto` defines the API contract
 2. **Code Generation** → Protocol Buffer compiler generates Python classes
 3. **Client Usage** → `agent.py` uses generated stubs to call microservices
 4. **Data Flow** → Messages are serialized/deserialized automatically
 
-### 💡 Example gRPC Usage
+### Example gRPC Usage
 
 ```python
 # In agent.py - How gRPC clients are used
@@ -552,7 +556,7 @@ def get_cart(user_id: str):
     return _cart_to_dict(response)  # Convert to Python dict
 ```
 
-### 🔧 Regenerating gRPC Files (if needed)
+### Regenerating gRPC Files (if needed)
 
 If you modify `hipstershop.proto`, regenerate the Python files:
 
@@ -568,7 +572,7 @@ python -m grpc_tools.protoc \
   botiq_ai_assist/hipstershop.proto
 ```
 
-### 🎯 Why gRPC?
+### Why gRPC?
 
 - **Performance** - Binary serialization, faster than JSON
 - **Type Safety** - Strongly typed message definitions
@@ -576,7 +580,7 @@ python -m grpc_tools.protoc \
 - **Code Generation** - Automatic client/server stub generation
 - **Streaming** - Supports real-time bidirectional streaming
 
-### 📚 Understanding Message Types
+### Understanding Message Types
 
 
 This gRPC architecture enables the AI agent to seamlessly integrate with all microservices, providing a complete e-commerce experience!
@@ -589,7 +593,7 @@ Pre-configured for easy demos:
 - **Shipping Address:** 1600 Amphitheatre Parkway, Mountain View, CA
 - **Email:** arjun@test.com
 
-## 🔄 Production Deployment to GKE
+## 12. Production Deployment to GKE
 
 ### Prerequisites for GKE Deployment
 
@@ -598,7 +602,7 @@ Pre-configured for easy demos:
 3. **gcloud CLI** configured
 4. **kubectl** configured for your cluster
 
-### 🚀 Enhanced One-Command Deployment (Recommended)
+### Enhanced One-Command Deployment (Recommended)
 
 **Complete deployment preparation and execution:**
 ```bash
@@ -615,7 +619,7 @@ This script automatically:
 - ✅ Waits for deployments to complete
 - ✅ Shows access information and useful commands
 
-### ⚙️ Manual Deployment (Alternative)
+### Manual Deployment (Alternative)
 
 1. **Set your Google Cloud Project:**
 ```bash
@@ -689,7 +693,7 @@ User → LoadBalancer → Frontend (nginx) → {
 }
 ```
 
-## 🛠️ Development
+## 13. Development
 
 ### File Structure
 ```
@@ -711,7 +715,7 @@ botiq-ai-assist/
 └── start_*.sh               # Legacy utility scripts
 ```
 
-### 🔧 Enhanced Development Scripts
+### Enhanced Development Scripts
 
 #### **toggle_grpc_urls.sh** - Smart URL Management
 ```bash
