@@ -4,11 +4,16 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
 
 ## 📑 Table of Contents
 
+- [🏗️ Architecture](#️-architecture)
+  - [System Architecture Diagram](#system-architecture-diagram)
+  - [Key Architecture Components](#key-architecture-components)
+  - [Backend (Python)](#backend-python)
+  - [Frontend (React)](#frontend-react)
 - [✨ Features](#-features)
   - [🧠 Intelligent AI Shopping Assistant](#-intelligent-ai-shopping-assistant)
   - [🛒 Complete E-commerce Experience](#-complete-e-commerce-experience)
   - [🎨 Modern UI/UX](#-modern-uiux)
-- [📸 Screenshots](#-screenshots)
+- [🎬 Product Demo](#-product-demo)
   - [1. Welcome](#1-welcome)
   - [2. Product Search](#2-product-search)
   - [3. Product Recommendation](#3-product-recommendation)
@@ -26,9 +31,6 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
   - [Development & DevOps Tools](#development--devops-tools)
   - [APIs & Communication](#apis--communication)
   - [Security & Configuration](#security--configuration)
-- [🏗️ Architecture](#️-architecture)
-  - [Backend (Python)](#backend-python)
-  - [Frontend (React)](#frontend-react)
 - [📋 Prerequisites](#-prerequisites)
   - [For Local Development](#for-local-development)
   - [For GKE Deployment](#for-gke-deployment)
@@ -78,6 +80,49 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
   - [Stopping Services](#stopping-services)
   - [Development Workflow Best Practices](#development-workflow-best-practices)
 
+## 🏗️ Architecture
+
+### System Architecture Diagram
+
+![BoutiqueAI Assistant - System Architecture](images/Architecture-Online-Boutique-AI-Assit.png)
+
+### Key Architecture Components
+
+**🎯 Data Flow:**
+1. **User Request** → React Frontend → FastAPI Backend
+2. **AI Processing** → Google ADK Agent → Gemini API
+3. **Microservice Calls** → gRPC Client → 9 Microservices
+4. **Response Assembly** → Backend → Frontend → User
+
+**🔄 Communication Patterns:**
+- **Frontend ↔ Backend:** HTTP/REST API (JSON)
+- **Backend ↔ AI:** Google ADK + Gemini API
+- **Backend ↔ Microservices:** gRPC (Protocol Buffers)
+- **Infrastructure:** Kubernetes Service Discovery
+
+### Backend (Python)
+- **FastAPI** - High-performance API server
+- **Google Agent Development Kit (ADK)** - AI agent framework
+- **gRPC** - Microservices communication
+- **9 Microservices Integration:**
+  - Product Catalog Service (Port 3550)
+  - Cart Service (Port 7070) 
+  - Recommendation Service (Port 8080)
+  - Shipping Service (Port 50052)
+  - Currency Service (Port 7000)
+  - Payment Service (Port 50051)
+  - Email Service (Port 5000)
+  - Checkout Service (Port 5050)
+  - Ad Service (Port 9555)
+
+### Frontend (React)
+- **React 18** - Modern React with hooks
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Smooth animations
+- **Heroicons** - Beautiful icons
+- **ReactMarkdown** - Rich text rendering
+- **Axios** - HTTP client for API communication
+
 ## ✨ Features
 
 ### 🧠 Intelligent AI Shopping Assistant
@@ -107,7 +152,7 @@ A modern, intelligent e-commerce chat interface powered by AI. Built with micros
 - Minimal text descriptions with rich visual components
 - Smooth animations and transitions
 
-## 📸 Screenshots
+## 🎬 Product Demo
 
 Experience the complete user journey through BoutiqueAI Assistant:
 
@@ -213,31 +258,6 @@ Professional order confirmation with product images and complete order details.
 - **Environment Variables** - Configuration management
 - **CORS** - Cross-origin resource sharing
 - **Input Validation** - Pydantic-based request validation
-
-## 🏗️ Architecture
-
-### Backend (Python)
-- **FastAPI** - High-performance API server
-- **Google Agent Development Kit (ADK)** - AI agent framework
-- **gRPC** - Microservices communication
-- **9 Microservices Integration:**
-  - Product Catalog Service (Port 3550)
-  - Cart Service (Port 7070) 
-  - Recommendation Service (Port 8080)
-  - Shipping Service (Port 50052)
-  - Currency Service (Port 7000)
-  - Payment Service (Port 50051)
-  - Email Service (Port 5000)
-  - Checkout Service (Port 5050)
-  - Ad Service (Port 9555)
-
-### Frontend (React)
-- **React 18** - Modern React with hooks
-- **Tailwind CSS** - Utility-first styling
-- **Framer Motion** - Smooth animations
-- **Heroicons** - Beautiful icons
-- **ReactMarkdown** - Rich text rendering
-- **Axios** - HTTP client for API communication
 
 ## 📋 Prerequisites
 
@@ -558,32 +578,6 @@ python -m grpc_tools.protoc \
 
 ### 📚 Understanding Message Types
 
-Common message types used throughout the application:
-
-```protobuf
-// Product information
-message Product {
-    string id = 1;
-    string name = 2;
-    string description = 3;
-    string picture = 4;
-    Money price_usd = 5;
-    repeated string categories = 6;
-}
-
-// Shopping cart item
-message CartItem {
-    string product_id = 1;
-    int32 quantity = 2;
-}
-
-// Money representation
-message Money {
-    string currency_code = 1;
-    int64 units = 2;
-    int32 nanos = 3;
-}
-```
 
 This gRPC architecture enables the AI agent to seamlessly integrate with all microservices, providing a complete e-commerce experience!
 
