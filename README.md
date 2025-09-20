@@ -15,8 +15,8 @@ An e-commerce chat interface built with Google ADK, Gemini LLM, and FastAPI. Int
    - [Frontend (React)](#frontend-react)
 
 2. [Features](#2-features)
-   - [Intelligent AI Shopping Assistant](#intelligent-ai-shopping-assistant)
-   - [Complete E-commerce Experience](#complete-e-commerce-experience)
+   - [AI Shopping Assistant](#ai-shopping-assistant)
+   - [E-commerce Features](#e-commerce-features)
    - [Modern UI/UX](#modern-uiux)
 
 3. [Product Demo](#3-product-demo)
@@ -32,12 +32,8 @@ An e-commerce chat interface built with Google ADK, Gemini LLM, and FastAPI. Int
 4. [Built With](#4-built-with)
    - [Frontend Technologies](#frontend-technologies)
    - [Backend Technologies](#backend-technologies)
-   - [AI & Machine Learning](#ai--machine-learning)
-   - [Microservices Architecture](#microservices-architecture)
-   - [Cloud & Infrastructure](#cloud--infrastructure)
-   - [Development & DevOps Tools](#development--devops-tools)
-   - [APIs & Communication](#apis--communication)
-   - [Security & Configuration](#security--configuration)
+   - [Dependencies](#dependencies)
+   - [gRPC Microservices Integration](#grpc-microservices-integration)
 
 5. [Prerequisites](#5-prerequisites)
    - [For Local Development](#for-local-development)
@@ -51,23 +47,22 @@ An e-commerce chat interface built with Google ADK, Gemini LLM, and FastAPI. Int
    - [5. Access the Application](#5-access-the-application)
 
 7. [Usage Examples](#7-usage-examples)
-   - [Intelligent Product Search](#intelligent-product-search)
-   - [Smart Price Filtering](#smart-price-filtering)
-   - [Promotional Intelligence](#promotional-intelligence)
-   - [Enhanced Shopping Cart](#enhanced-shopping-cart)
-   - [Recommendation System](#recommendation-system)
-   - [Order Confirmation with Images](#order-confirmation-with-images)
+   - [Product Search](#product-search)
+   - [Price Filtering](#price-filtering)
+   - [Shopping Cart](#shopping-cart)
+   - [Recommendations](#recommendations)
+   - [Order Confirmation](#order-confirmation)
 
-8. [AI Intelligence Capabilities](#8-ai-intelligence-capabilities)
-   - [Smart Search Intelligence](#smart-search-intelligence)
-   - [Intelligent Price Filtering](#intelligent-price-filtering)
-   - [Intelligent Recommendations](#intelligent-recommendations)
-   - [Smart Promotional Integration](#smart-promotional-integration)
-   - [Visual Intelligence](#visual-intelligence)
+8. [AI Agent Functions](#8-ai-agent-functions)
+   - [Product Catalog Functions](#product-catalog-functions)
+   - [Shopping Cart Functions](#shopping-cart-functions)
+   - [Order Processing Functions](#order-processing-functions)
+   - [Shipping & Payment Functions](#shipping--payment-functions)
+   - [Additional Service Functions](#additional-service-functions)
 
 9. [Component Architecture](#9-component-architecture)
-   - [Key React Components](#key-react-components)
-   - [Smart Message Detection](#smart-message-detection)
+   - [React Components](#react-components)
+   - [Message Content Detection](#message-content-detection)
 
 10. [Configuration](#10-configuration)
     - [Environment Variables](#environment-variables)
@@ -104,13 +99,13 @@ An e-commerce chat interface built with Google ADK, Gemini LLM, and FastAPI. Int
 
 ### Key Architecture Components
 
-**🎯 Data Flow:**
+**Data Flow:**
 1. **User Request** → React Frontend → FastAPI Backend
 2. **AI Processing** → Google ADK Agent → Gemini API
 3. **Microservice Calls** → gRPC Client → 9 Microservices
 4. **Response Assembly** → Backend → Frontend → User
 
-**🔄 Communication Patterns:**
+**Communication Patterns:**
 - **Frontend ↔ Backend:** HTTP/REST API (JSON)
 - **Backend ↔ AI:** Google ADK + Gemini API
 - **Backend ↔ Microservices:** gRPC (Protocol Buffers)
@@ -301,12 +296,12 @@ cd ..
 ```
 
 This script automatically:
-- ✅ Configures gRPC URLs for localhost (port forwarding)
-- ✅ Starts port forwarding to all microservices  
-- ✅ Installs frontend dependencies if needed
-- ✅ Starts Python backend
-- ✅ Starts React frontend
-- ✅ Provides unified logging and cleanup
+- Configures gRPC URLs for localhost (port forwarding)
+- Starts port forwarding to all microservices  
+- Installs frontend dependencies if needed
+- Starts Python backend
+- Starts React frontend
+- Provides unified logging and cleanup
 
 **To stop all services:**
 ```bash
@@ -602,13 +597,13 @@ export PROJECT_ID="your-project-id"
 ```
 
 This script automatically:
-- ✅ Switches gRPC URLs to Kubernetes mode
-- ✅ Stops local development services
-- ✅ Builds Docker images with correct platform (linux/amd64)
-- ✅ Pushes images to Google Container Registry
-- ✅ Deploys to Kubernetes with rolling updates
-- ✅ Waits for deployments to complete
-- ✅ Shows access information and useful commands
+- Switches gRPC URLs to Kubernetes mode
+- Stops local development services
+- Builds Docker images with correct platform (linux/amd64)
+- Pushes images to Google Container Registry
+- Deploys to Kubernetes with rolling updates
+- Waits for deployments to complete
+- Shows access information and useful commands
 
 ### Manual Deployment (Alternative)
 
@@ -717,10 +712,10 @@ botiq-ai-assist/
 ```
 
 **Features:**
-- ✅ Automatic backup creation (`agent.py.backup`)
-- ✅ Intelligent mode detection
-- ✅ Colorized output with clear status
-- ✅ Safe switching with validation
+- Automatic backup creation (`agent.py.backup`)
+- Intelligent mode detection
+- Colorized output with clear status
+- Safe switching with validation
 
 #### **start_local_dev.sh** - All-in-One Development
 ```bash
@@ -729,12 +724,12 @@ botiq-ai-assist/
 ```
 
 **What it does:**
-- 🔧 Configures gRPC URLs for localhost
-- 🔌 Starts port forwarding to all microservices
-- 📦 Installs frontend dependencies if needed
-- 🐍 Starts Python backend with monitoring
-- ⚛️ Starts React frontend with hot reload
-- 🧹 Unified cleanup on exit
+- Configures gRPC URLs for localhost
+- Starts port forwarding to all microservices
+- Installs frontend dependencies if needed
+- Starts Python backend with monitoring
+- Starts React frontend with hot reload
+- Unified cleanup on exit
 
 #### **prepare_deploy.sh** - Production Deployment
 ```bash
@@ -743,13 +738,13 @@ export PROJECT_ID="your-project-id"
 ```
 
 **Automated deployment process:**
-- ☸️ Switches to Kubernetes mode
-- 🛑 Stops local development services
-- 🐳 Builds Docker images (linux/amd64)
-- ☁️ Pushes to Google Container Registry
-- 🚀 Deploys with rolling updates
-- ⏳ Waits for deployment completion
-- 🌐 Shows access URLs and commands
+- Switches to Kubernetes mode
+- Stops local development services
+- Builds Docker images (linux/amd64)
+- Pushes to Google Container Registry
+- Deploys with rolling updates
+- Waits for deployment completion
+- Shows access URLs and commands
 
 ### API Endpoints
 
@@ -774,20 +769,20 @@ export PROJECT_ID="your-project-id"
 
 ### Development Workflow Best Practices
 
-**🏠 Local Development:**
+**Local Development:**
 ```bash
 ./start_local_dev.sh          # One command to start everything
 # Develop and test...
 ./stop_local_dev.sh           # Clean shutdown
 ```
 
-**🚀 Production Deployment:**
+**Production Deployment:**
 ```bash
 export PROJECT_ID="your-project-id"
 ./prepare_deploy.sh           # One command to deploy
 ```
 
-**🔄 Switching Between Environments:**
+**Switching Between Environments:**
 ```bash
 ./toggle_grpc_urls.sh status  # Check current mode
 ./toggle_grpc_urls.sh local   # Switch to local development
