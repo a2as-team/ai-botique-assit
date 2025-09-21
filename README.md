@@ -1,6 +1,8 @@
 # BoutiqueAI Assistant
 
-An e-commerce chat interface built with Google ADK, Gemini LLM, and FastAPI. Integrates with 9 gRPC microservices for complete shopping functionality. 
+An e-commerce chat interface built with Google ADK, Gemini LLM using Function Calling, and FastAPI. Integrates with 9 gRPC microservices for complete shopping functionality. 
+
+![BoutiqueAI Assistant Demo](images/AI_Online_Boutique.gif)
 
 ![Welcome Page](images/welcome_page.png)
 
