@@ -294,7 +294,7 @@ cd ..
 
 **One-command local development startup:**
 ```bash
-./start_local_dev.sh
+utilities/start_local_dev.sh
 ```
 
 This script automatically:
@@ -307,7 +307,7 @@ This script automatically:
 
 **To stop all services:**
 ```bash
-./stop_local_dev.sh
+utilities/stop_local_dev.sh
 ```
 
 ### 3. Manual Development Setup
@@ -316,13 +316,13 @@ If you prefer manual control:
 
 ```bash
 # Step 1: Configure for local development
-./toggle_grpc_urls.sh local
+utilities/toggle_grpc_urls.sh local
 
 # Step 2: Start port forwarding
-./start_port_forwards.sh
+utilities/start_port_forwards.sh
 
 # Step 3: Start services
-./start_all.sh  # or run backend/frontend separately
+utilities/start_all.sh  # or run backend/frontend separately
 ```
 
 ### 4. gRPC URL Management
@@ -331,16 +331,16 @@ The project includes intelligent gRPC URL switching:
 
 ```bash
 # Check current configuration
-./toggle_grpc_urls.sh status
+utilities/toggle_grpc_urls.sh status
 
 # Switch to localhost for local development
-./toggle_grpc_urls.sh local
+utilities/toggle_grpc_urls.sh local
 
 # Switch to Kubernetes for deployment
-./toggle_grpc_urls.sh k8s
+utilities/toggle_grpc_urls.sh k8s
 
 # Show help
-./toggle_grpc_urls.sh help
+utilities/toggle_grpc_urls.sh help
 ```
 
 ### 5. Access the Application
@@ -595,7 +595,7 @@ Pre-configured for easy demos:
 **Complete deployment preparation and execution:**
 ```bash
 export PROJECT_ID="your-project-id"
-./prepare_deploy.sh
+utilities/prepare_deploy.sh
 ```
 
 This script automatically:
@@ -617,7 +617,7 @@ gcloud config set project $PROJECT_ID
 
 2. **Switch to Kubernetes mode:**
 ```bash
-./toggle_grpc_urls.sh k8s
+utilities/toggle_grpc_urls.sh k8s
 ```
 
 3. **Enable required services:**
@@ -696,21 +696,22 @@ botiq-ai-assist/
 │       └── index.css        # Global styles
 ├── k8s/                      # Kubernetes manifests
 ├── custom_adk_app.py         # FastAPI server
-├── toggle_grpc_urls.sh       # Smart gRPC URL switching
-├── start_local_dev.sh        # Enhanced local development
-├── stop_local_dev.sh         # Stop all local services
-├── prepare_deploy.sh         # One-command deployment
-└── start_*.sh               # Legacy utility scripts
+└── utilities/                # All shell scripts organized here
+    ├── toggle_grpc_urls.sh   # Smart gRPC URL switching
+    ├── start_local_dev.sh    # Enhanced local development
+    ├── stop_local_dev.sh     # Stop all local services
+    ├── prepare_deploy.sh     # One-command deployment
+    └── start_*.sh           # Legacy utility scripts
 ```
 
 ### Enhanced Development Scripts
 
-#### **toggle_grpc_urls.sh** - Smart URL Management
+#### **utilities/toggle_grpc_urls.sh** - Smart URL Management
 ```bash
-./toggle_grpc_urls.sh status    # Check current configuration
-./toggle_grpc_urls.sh local     # Switch to localhost for development
-./toggle_grpc_urls.sh k8s       # Switch to Kubernetes for deployment
-./toggle_grpc_urls.sh help      # Show detailed help
+utilities/toggle_grpc_urls.sh status    # Check current configuration
+utilities/toggle_grpc_urls.sh local     # Switch to localhost for development
+utilities/toggle_grpc_urls.sh k8s       # Switch to Kubernetes for deployment
+utilities/toggle_grpc_urls.sh help      # Show detailed help
 ```
 
 **Features:**
@@ -719,9 +720,9 @@ botiq-ai-assist/
 - Colorized output with clear status
 - Safe switching with validation
 
-#### **start_local_dev.sh** - All-in-One Development
+#### **utilities/start_local_dev.sh** - All-in-One Development
 ```bash
-./start_local_dev.sh           # Start everything automatically
+utilities/start_local_dev.sh           # Start everything automatically
 # Ctrl+C to stop all services
 ```
 
@@ -733,10 +734,10 @@ botiq-ai-assist/
 - Starts React frontend with hot reload
 - Unified cleanup on exit
 
-#### **prepare_deploy.sh** - Production Deployment
+#### **utilities/prepare_deploy.sh** - Production Deployment
 ```bash
 export PROJECT_ID="your-project-id"
-./prepare_deploy.sh            # Deploy everything to GKE
+utilities/prepare_deploy.sh            # Deploy everything to GKE
 ```
 
 **Automated deployment process:**
@@ -760,33 +761,33 @@ export PROJECT_ID="your-project-id"
 
 **Enhanced (Recommended):**
 ```bash
-./stop_local_dev.sh           # Stop all services and cleanup
+utilities/stop_local_dev.sh           # Stop all services and cleanup
 ```
 
 **Legacy:**
 ```bash
-./stop_services.sh            # Stop individual services
-./kill_port_forwards.sh       # Stop only port-forwarding
+utilities/stop_services.sh            # Stop individual services
+utilities/kill_port_forwards.sh       # Stop only port-forwarding
 ```
 
 ### Development Workflow Best Practices
 
 **Local Development:**
 ```bash
-./start_local_dev.sh          # One command to start everything
+utilities/start_local_dev.sh          # One command to start everything
 # Develop and test...
-./stop_local_dev.sh           # Clean shutdown
+utilities/stop_local_dev.sh           # Clean shutdown
 ```
 
 **Production Deployment:**
 ```bash
 export PROJECT_ID="your-project-id"
-./prepare_deploy.sh           # One command to deploy
+utilities/prepare_deploy.sh           # One command to deploy
 ```
 
 **Switching Between Environments:**
 ```bash
-./toggle_grpc_urls.sh status  # Check current mode
-./toggle_grpc_urls.sh local   # Switch to local development
-./toggle_grpc_urls.sh k8s     # Switch to production deployment
+utilities/toggle_grpc_urls.sh status  # Check current mode
+utilities/toggle_grpc_urls.sh local   # Switch to local development
+utilities/toggle_grpc_urls.sh k8s     # Switch to production deployment
 ```

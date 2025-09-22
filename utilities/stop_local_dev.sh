@@ -46,13 +46,13 @@ pkill -f "webpack" 2>/dev/null
 # Show final status
 echo -e "\n${GREEN}🎉 All services stopped successfully!${NC}"
 echo -e "${BLUE}💡 Tips:${NC}"
-echo -e "  ${YELLOW}•${NC} Run './start_local_dev.sh' to restart"
-echo -e "  ${YELLOW}•${NC} Run './toggle_grpc_urls.sh k8s' before deployment"
-echo -e "  ${YELLOW}•${NC} Check status with './toggle_grpc_urls.sh status'"
+echo -e "  ${YELLOW}•${NC} Run 'utilities/start_local_dev.sh' to restart"
+echo -e "  ${YELLOW}•${NC} Run 'utilities/toggle_grpc_urls.sh k8s' before deployment"
+echo -e "  ${YELLOW}•${NC} Check status with 'utilities/toggle_grpc_urls.sh status'"
 
 # Check if any URLs need to be reset for deployment
 current_mode=$(grep -q "localhost:" "botiq_ai_assist/agent.py" && echo "local" || echo "k8s")
 if [ "$current_mode" = "local" ]; then
     echo -e "\n${YELLOW}⚠️  Note: gRPC URLs are still set to localhost${NC}"
-    echo -e "${BLUE}💡 Run './toggle_grpc_urls.sh k8s' before deploying to production${NC}"
+    echo -e "${BLUE}💡 Run 'utilities/toggle_grpc_urls.sh k8s' before deploying to production${NC}"
 fi

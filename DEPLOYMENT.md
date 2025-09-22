@@ -32,10 +32,10 @@ This guide provides step-by-step instructions to deploy the Boutique AI Assistan
 
 ```bash
 # Make the script executable
-chmod +x deploy.sh
+chmod +x utilities/deploy.sh
 
 # Run the deployment script
-./deploy.sh YOUR_PROJECT_ID us-central1 boutique-cluster
+utilities/deploy.sh YOUR_PROJECT_ID us-central1 boutique-cluster
 ```
 
 ### Option 2: Manual Deployment

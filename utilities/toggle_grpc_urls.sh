@@ -53,7 +53,7 @@ switch_to_local() {
     done
     
     echo -e "${GREEN}🎉 Successfully switched to LOCAL development mode!${NC}"
-    echo -e "${YELLOW}💡 Make sure to run: ./start_port_forwards.sh${NC}"
+    echo -e "${YELLOW}💡 Make sure to run: utilities/start_port_forwards.sh${NC}"
 }
 
 # Function to switch to Kubernetes URLs
@@ -126,7 +126,7 @@ case "${1:-status}" in
         echo -e "${BLUE}🛠️  gRPC URL Toggle Script${NC}"
         echo ""
         echo -e "${YELLOW}Usage:${NC}"
-        echo "  ./toggle_grpc_urls.sh [command]"
+        echo "  utilities/toggle_grpc_urls.sh [command]"
         echo ""
         echo -e "${YELLOW}Commands:${NC}"
         echo "  local      Switch to localhost URLs for local development"
@@ -135,13 +135,13 @@ case "${1:-status}" in
         echo "  help       Show this help message"
         echo ""
         echo -e "${YELLOW}Examples:${NC}"
-        echo "  ./toggle_grpc_urls.sh local    # For local development with port forwarding"
-        echo "  ./toggle_grpc_urls.sh k8s      # For deployment to GKE"
-        echo "  ./toggle_grpc_urls.sh status   # Check current mode"
+        echo "  utilities/toggle_grpc_urls.sh local    # For local development with port forwarding"
+        echo "  utilities/toggle_grpc_urls.sh k8s      # For deployment to GKE"
+        echo "  utilities/toggle_grpc_urls.sh status   # Check current mode"
         ;;
     *)
         echo -e "${RED}❌ Unknown command: $1${NC}"
-        echo -e "${YELLOW}💡 Use './toggle_grpc_urls.sh help' for usage information${NC}"
+        echo -e "${YELLOW}💡 Use 'utilities/toggle_grpc_urls.sh help' for usage information${NC}"
         exit 1
         ;;
 esac

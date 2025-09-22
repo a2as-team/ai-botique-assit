@@ -72,9 +72,9 @@ echo -e "${GREEN}📚 API Docs:${NC} http://localhost:8000/docs"
 echo -e "${YELLOW}📡 Port Forwarding:${NC} Active to all microservices"
 
 echo -e "\n${BLUE}💡 Useful Commands:${NC}"
-echo -e "  ${YELLOW}Check status:${NC} ./toggle_grpc_urls.sh status"
+echo -e "  ${YELLOW}Check status:${NC} utilities/toggle_grpc_urls.sh status"
 echo -e "  ${YELLOW}View logs:${NC} tail -f backend.log (if logging to file)"
-echo -e "  ${YELLOW}Stop all:${NC} ./stop_local_dev.sh"
+echo -e "  ${YELLOW}Stop all:${NC} utilities/stop_local_dev.sh"
 
 echo -e "\n${YELLOW}🔴 Press Ctrl+C to stop all services${NC}"
 
@@ -102,7 +102,7 @@ cleanup() {
     fi
     
     echo -e "${GREEN}✅ All services stopped!${NC}"
-    echo -e "${YELLOW}💡 Run './toggle_grpc_urls.sh k8s' before deployment${NC}"
+    echo -e "${YELLOW}💡 Run 'utilities/toggle_grpc_urls.sh k8s' before deployment${NC}"
     exit 0
 }
 
